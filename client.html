@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>vueFiles</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="http://cdn.markamations.com/vue"></script>
+    <script src="http://cdn.markamations.com/jquery"></script>
+  </head>
+  <body>
+    <div id="vueFiles">
+      <input type="text" v-bind:value="currentPath" class="path" id="path" v-on:keyup="setPathFromTextEnter" /><input type="button" value="Go" v-on:click="setPathFromText" class="buttonGo"><br />
+      <folder v-for="folder in folders" v-bind:folder="folder"></folder>
+      <file v-for="file in files" v-bind:file="file"></file>
+    </div>
+    <div id="app-footer">
+      <v-footer></v-footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
